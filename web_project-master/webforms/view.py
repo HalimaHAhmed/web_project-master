@@ -1,10 +1,29 @@
 # to render html webpages
+import random
 from django.http import HttpResponse
-html_string = "<h1>hello halimah</h1>"
 
 
-def home(request):
+def home_view(request):
     " take in a request django sends a request  return html response we pick to return a response"
 
-# hel
-    return HttpResponse(html_string)
+
+name = 'halima'  # hard coded
+# api call to some rest api with python and python request
+number = random.randint(10, 1233123)  # pseduo random
+
+# from the database
+
+
+# django templates
+h1_string = f"""
+<h1 >hello {name} - {number}!< /h1 >
+
+
+"""
+p_string = f"""
+
+<p>hi {name} - {number}!</p>
+"""
+html_string = h1_string + p_string
+
+# return HttpResponse(html_string)
