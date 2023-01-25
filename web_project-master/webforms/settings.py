@@ -55,7 +55,7 @@ ROOT_URLCONF = 'webforms.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['D:\halima\django\web_project-master\web_project-master\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
