@@ -1,6 +1,8 @@
 # to render html webpages
 import random
 from django.http import HttpResponse
+
+from django.template.loader import render_to_string
 from articles.models import Article
 
 
@@ -19,12 +21,14 @@ def home_view(request):
         "context": article_obj.content
 
     }
+    open()
 
     # django templates
-    html_string = """
-    
-    <h1>{title} (id: {id}!</h1>)
-    <p> {content}!</p>
-    
-    """   .format(**context)
+    html_string = render_to_string("home-view.html", context=context)
+    # html_string = """
+
+    # <h1>{title} (id: {id}!</h1>)
+    # <p> {content}!</p>
+
+    # """   .format(**context)
     return HttpResponse(html_string)
